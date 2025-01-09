@@ -28,14 +28,20 @@
         <ul>
             <li>General-purpose code execution across multiple languages</li>
             <li>Output visualization ranging from text to interactive UIs</li>
-            <li>Collection of human feedback on code quality and execution results</li>
         </ul>
 
-        <h2>Output Visualization</h2>
+        <h2>Why Software Arena?</h2>
+        <p>
+            Software Arena is designed to address the limitations of Chatbot Arena, particularly in terms of precise code evaluation.
+            Human judgement on code generation is not always reliable [<a href="https://arxiv.org/abs/2402.11296">1</a>, <a href="https://arxiv.org/abs/2410.03837">2</a>], and generally requires non-trivial knowledge of the language and its libraries.
+            We consider this a significant limitation for the development of advanced AI systems.
+        </p>    
+
+        <h2>Supported Outputs</h2>
         <p>Software Arena can visualize various types of code execution outputs:</p>
         <ul>
             <li>Documents (Markdown or Plain Text)</li>
-            <li>Websites (single page HTML)</li>
+            <li>Websites (single webpage)</li>
             <li>Scalable Vector Graphics (SVG) images</li>
             <li>Plots</li>
             <li>Tables</li>
@@ -50,11 +56,23 @@
             Software Arena builds upon FastChat, the foundation of Chatbot Arena, providing seamless code execution capabilities. The implementation focuses on:
         </p>
         <ul>
-            <li><strong>Core Code Execution:</strong> Secure, sandboxed environment using E2B for executing code in any supported language, with potential Modal integration for improved scalability</li>
-            <li><strong>Output Handling:</strong> Universal output capture and rendering system for all types of program output</li>
-            <li><strong>Execution and Interaction Tracking:</strong> Comprehensive logging of code execution, user interactions, editing history, and user feedback</li>
+            <li><strong>Code Execution:</strong> Secure, sandboxed environment using E2B for executing code in supported language (Python, JavaScript, etc.).</li>
+            <li><strong>Dependency Management:</strong> Automatic installation of various dependencies via NPM and PIP (backeneded by UV).</li>
+            <li><strong>Code Editing:</strong> On-the-fly code modification, testing, and re-execution.</li>
+            <li><strong>Interaction Tracking:</strong> Comprehensive logging of user interactions on the rendered UI.</li>
+        </ul>
+        
+        <h2>Expected Outcome</h2>
+        <p>
+            Software Arena aims to deliver several key outcomes:
+        </p>
+        <ul>
+            <li><strong>Leaderboard:</strong> A dynamic Elo rating system tracking LLM performance in execution-based code generation, providing transparent comparisons across different models.</li>
+            <li><strong>Human Preference Data:</strong> Collection of high-quality human feedback on code outputs, creating a valuable dataset for improving code-generation capabilities.</li>
+            <li><strong>Interactions and Trajectories:</strong> Comprehensive logs of human-AI interactions during code development and user trajectories on the rendered GUI.</li>
         </ul>
 
+        
         <footer>
             Contact:
             [<a href="mailto:contact@computerintelligenceproject.org"><u>Email</u></a>] 
