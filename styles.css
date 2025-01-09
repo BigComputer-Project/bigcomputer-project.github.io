@@ -1,0 +1,32 @@
+body {
+    font-family: monospace;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 20px 0;
+} 
