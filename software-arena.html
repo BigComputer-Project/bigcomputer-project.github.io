@@ -27,7 +27,7 @@
         </p>
         <ul>
             <li>General-purpose code execution across multiple languages</li>
-            <li>Output visualization ranging from text to interactive UIs</li>
+            <li>Output visualization ranging from text, images, to interactive UIs</li>
         </ul>
 
         <h2>Why Software Arena?</h2>
@@ -36,7 +36,14 @@
             Human judgement on code generation is not always reliable [<a href="https://arxiv.org/abs/2402.11296"><u>1</u></a>, <a href="https://arxiv.org/abs/2410.03837"><u>2</u></a>], and generally requires non-trivial knowledge of the language and its libraries.
             We consider this a significant limitation for the development of advanced AI systems.
         </p>    
-
+        
+        <p>
+            There are several concurrent features and projects that explore the capabilities of LLMs designing complex programs with execution.
+            <a href="https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them"><u>Claude Artifacts</u></a> by Anthropic is one of the first features in this space to let users interact with LLM-generated frontend applications.
+            <a href="https://v0.dev/"><u>v0</u></a> by Vercel also allows users to ship LLM-generated frontend applications with frontend frameworks.
+            Based on this, <a href="https://chatbotarena.ai/webdev"><u>WebDev Arena</u></a> by Chatbot Arena and <a href="https://www.llmcodearena.com/"><u>Code Arena</u></a> by Together AI focus on evaluating LLM-generated frontend applications.
+            <u>Software Arena aims to extend this capability to a wider range of outputs, not just frontend applications, but also programs that can be run on backend servers and data analysis.</u> 
+        </p>
         <h2>Supported Outputs</h2>
         <p>Software Arena can visualize various types of code execution outputs:</p>
         <ul>
@@ -46,8 +53,9 @@
             <li>Plots</li>
             <li>Tables</li>
             <li>Interactive React/Vue components</li>
+            <li>Gradio applications</li>
+            <li>Streamlit applications</li>
             <li>PyGame</li>
-            <li>Gradio/Streamlit applications</li>
             <li>Mermaid diagrams</li>
         </ul>
 
@@ -56,8 +64,8 @@
             Software Arena builds upon FastChat, the foundation of Chatbot Arena, providing seamless code execution capabilities. The implementation focuses on:
         </p>
         <ul>
-            <li><strong>Code Execution:</strong> Secure, sandboxed environment using E2B for executing code in supported language (Python, JavaScript, etc.).</li>
-            <li><strong>Dependency Management:</strong> Automatic installation of various dependencies via NPM and PIP (backeneded by UV).</li>
+            <li><strong>Code Execution:</strong> Secure, sandboxed environment using <a href="https://e2b.dev/"><u>E2B</u></a> for executing code in supported language (Python, JavaScript, etc.).</li>
+            <li><strong>Dependency Management:</strong> Automatic installation of various dependencies via NPM and PIP (backed by <a href="https://github.com/astral-sh/uv"><u>UV</u></a>).</li>
             <li><strong>Code Editing:</strong> On-the-fly code modification, testing, and re-execution.</li>
             <li><strong>Interaction Tracking:</strong> Comprehensive logging of user interactions on the rendered UI.</li>
         </ul>
