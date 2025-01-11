@@ -67,6 +67,7 @@
             <li><strong>Code Execution:</strong> Secure, sandboxed environment using <a href="https://e2b.dev/"><u>E2B</u></a> for executing code in supported language (Python, JavaScript, etc.).</li>
             <li><strong>Dependency Management:</strong> Automatic installation of various dependencies via <i>npm</i> and <i>pip</i> (backed by <a href="https://github.com/astral-sh/uv"><u><i>uv</i></u></a>).</li>
             <li><strong>Code Editing:</strong> On-the-fly code modification, testing, and re-execution.</li>
+            <li><strong>One-Side Chat:</strong> In the side-by-side chat mode, the user can choose to only interact one of the models to further understand the model's capabilities.</li>
             <li><strong>Interaction Tracking:</strong> Comprehensive logging of user interactions on the rendered UI.</li>
         </ul>
         
@@ -88,6 +89,58 @@
         <p>
             Meanwhile, we are actively working with <a href="https://lmarena.ai/"><u>Chatbot Arena</u></a> to integrate Software Arena into their platform.
         </p>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">Why is the code execution process of Software Arena a bit slow?</div>
+                <div class="faq-answer">
+                    Before code execution, Software Arena parses the code and installs various packages to ensure the code can be executed.
+                    This is why the code execution process is a bit slow.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What can not Software Arena do?</div>
+                <div class="faq-answer">
+                    Currently, Software Arena does not support programming languages other than JavaScript, TypeScript, HTML, and Python.
+                    In addition, Software Arena can not execute code that use desktop-level UIs (e.g., Tkinter, PyQt, etc.) or take user inputs from the keyboard.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How do I know if Software Arena will use my personal identifiable information (PII)?</div>
+                <div class="faq-answer">
+                    While Software Arena collects the user input, we will redact the PII (e.g., API keys, etc.) by using <a href="https://huggingface.co/bigcode/starpii"><u>StarPII</u></a>, an NER model that trained on a large-scale code dataset that can identify and mask the PII.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I contribute to the project?</div>
+                <div class="faq-answer">
+                    Yes! Software Arena is an open-source project, and we welcome contributions. You can find our repository on GitHub and join our community through email. We appreciate help in various areas including development, testing, and documentation.
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all other answers
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('active');
+                    });
+                    
+                    // Toggle current answer
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('active');
+                    }
+                });
+            });
+        </script>
+
         <footer>
             Contact:
             [<a href="mailto:computer.intelligence.project@gmail.com"><u>Email</u></a>] 
