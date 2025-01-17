@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Intelligence Project - Live Demo</title>
+    <title>Interactive Demo - Computer Intelligence Project</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/@gradio/client@0.12.1/dist/index.min.js"></script>
     <style>
         .demo-container {
             width: 100%;
+            height: 800px;
             margin: 20px 0;
-            min-height: 800px;
+        }
+        .demo-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
@@ -20,33 +24,22 @@
             [<a href="index.html">Home</a>]
             [<a href="about.html">About</a>]
             [<a href="software-arena.html">Software Arena</a>]
+            [<a href="demo.html">Interactive Demo</a>]
         </nav>
     </header>
 
     <main>
-        <h1>Live Demo</h1>
-        <div id="gradio-app" class="demo-container">
-            Loading demo...
+        <h1>Interactive Demo</h1>
+        <p>Experience our interactive demo directly in your browser:</p>
+        
+        <div class="demo-container">
+            <iframe 
+                src="http://104.154.215.22:7860/"
+                class="demo-frame"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
         </div>
     </main>
-
-    <script>
-        async function mountGradioApp() {
-            try {
-                const app = await client.mount("http://104.154.215.22:7860", "#gradio-app", {});
-                console.log("Gradio app mounted successfully");
-            } catch (error) {
-                console.error("Error mounting Gradio app:", error);
-                document.getElementById("gradio-app").innerHTML = 
-                    "Unable to load the demo. Please try visiting <a href='http://104.154.215.22:7860' target='_blank'>the demo directly</a>.";
-            }
-        }
-
-        // Initialize the client
-        const client = new gradio.client("http://104.154.215.22:7860");
-        
-        // Mount the app when the page loads
-        window.addEventListener("load", mountGradioApp);
-    </script>
 </body>
 </html> 
